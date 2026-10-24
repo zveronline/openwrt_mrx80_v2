@@ -83,8 +83,7 @@
 };
 
 &partitions {
-	/* Concatenated with tclinux_rootfs to form the UBI volume */
-	root1: partition@60c0000 {
+	partition@60c0000 {
 		label = "unknown";
 		reg = <0x60c0000 0xd00000>;
 	};
@@ -106,21 +105,4 @@
 			};
 		};
 	};
-};
-
-/* Sockets are numbered in reverse switch port order: LAN1 is port 4. */
-&gsw_port1 {
-	label = "lan4";
-};
-
-&gsw_port2 {
-	label = "lan3";
-};
-
-&gsw_port3 {
-	label = "lan2";
-};
-
-&gsw_port4 {
-	label = "lan1";
 };

@@ -2,9 +2,7 @@ platform_check_image() {
 	local board=$(board_name)
 
 	case "$board" in
-	chinamobile,gs3101|\
-	dasan,h660gm-a-airtel|\
-	dasan,h660gm-a-generic)
+	chinamobile,gs3101)
 		return 0
 		;;
 	esac
@@ -16,9 +14,7 @@ platform_do_upgrade() {
 	local board=$(board_name)
 
 	case "$board" in
-	chinamobile,gs3101|\
-	dasan,h660gm-a-airtel|\
-	dasan,h660gm-a-generic)
+	chinamobile,gs3101)
 		CI_KERNPART="tclinux_kernel"
 		nand_do_upgrade "$1"
 		;;

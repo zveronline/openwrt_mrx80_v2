@@ -29,9 +29,7 @@ function wpad_update_mlo(service, mode)
 		if (!data.phy)
 			continue;
 
-		let entry = { ...data };
-		delete entry.radio_config;
-		config[ifname] = entry;
+		config[ifname] = data;
 	}
 
 	ubus.call({

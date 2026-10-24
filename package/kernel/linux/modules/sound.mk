@@ -64,7 +64,6 @@ define KernelPackage/sound-core
 endef
 
 define KernelPackage/sound-core/uml
-  KCONFIG:=CONFIG_UML_SOUND
   FILES:= \
 	$(LINUX_DIR)/sound/soundcore.ko \
 	$(LINUX_DIR)/arch/um/drivers/hostaudio.ko

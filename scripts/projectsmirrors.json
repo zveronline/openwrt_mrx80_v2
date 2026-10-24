@@ -51,7 +51,8 @@
 		"https://mirrors.ustc.edu.cn/kernel.org"
 	],
 	"@GNOME": [
-		"https://download.gnome.org/sources"
+		"https://download.gnome.org/sources",
+		"https://mirror.csclub.uwaterloo.ca/gnome/sources"
 	],
 	"@OPENWRT": [
 		"https://sources.cdn.openwrt.org",

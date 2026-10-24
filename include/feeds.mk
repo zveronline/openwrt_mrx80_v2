@@ -40,8 +40,8 @@ define FeedSourcesAppendOPKG
 	$(if $(CONFIG_BUILDBOT), \
 		echo 'src/gz %d_kmods %U/targets/%S/kmods/$(LINUX_VERSION)-$(LINUX_RELEASE)-$(LINUX_VERMAGIC)';) \
 	$(foreach feed,$(FEEDS_AVAILABLE), \
-		$(if $(CONFIG_FEED_$(feed)), \
-			echo '$(if $(filter m,$(CONFIG_FEED_$(feed))),# )src/gz %d_$(feed) %U/packages/%A/$(feed)';)))) \
+               $(if $(CONFIG_FEED_$(feed)), \
+                       echo '$(if $(filter m,$(CONFIG_FEED_$(feed))),# )src/gz %d_$(feed) %U/packages/%A/$(feed)';)))) \
 ) >> $(1)
 endef
 
@@ -56,7 +56,7 @@ define FeedSourcesAppendAPK
 	$(if $(CONFIG_BUILDBOT), \
 		echo '%U/targets/%S/kmods/$(LINUX_VERSION)-$(LINUX_RELEASE)-$(LINUX_VERMAGIC)/packages.adb';) \
 	$(foreach feed,$(FEEDS_AVAILABLE), \
-		$(if $(CONFIG_FEED_$(feed)), \
+		$(if $(and $(CONFIG_FEED_$(feed)),$(filter-out fantastic_packages,$(feed))), \
 			echo '$(if $(filter m,$(CONFIG_FEED_$(feed))),# )%U/packages/%A/$(feed)/packages.adb';)))) \
 ) >> $(1)
 endef
